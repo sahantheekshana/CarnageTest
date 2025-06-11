@@ -49,7 +49,7 @@ This logic helps avoid test failure due to stock issues and makes it reliable fo
 
 - T-shirt and shorts selection test
 - Handles out-of-stock or unavailable product cases
-## 🙋‍♂️ Author
+## Author
 Email: sahantheekshana65@gmail.com  
 GitHub: https://github.com/sahantheekshana
 
