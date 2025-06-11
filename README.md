@@ -1,96 +1,57 @@
-# 🧪 Carnage E-Commerce Automation Suite
 
-Welcome to the **CarnageTest** Project!  
-This project is a **TestNG + Selenium** based automation framework designed to **test and validate the shopping experience** on [Incarnage](https://incarnage.com/), focusing specifically on T-Shirts and Shorts.
+# 🛒 Carnage E-Commerce Automation Test
 
----
+This project is an automation test script written in Java using **Selenium WebDriver** and **TestNG**.  
+It is designed to test the T-shirt and Shorts purchase flow on the [https://incarnage.com](https://incarnage.com) website.
 
-## 🚀 Project Highlights
+## 📝 About the Project
 
-- ✅ Automates real-user flow on [https://incarnage.com](https://incarnage.com)
-- 👕 Validates product details like **name, price, color, size**
-- 🔍 Checks availability before performing actions
-- 🛒 Automates **add-to-cart** and **cart validation**
-- 🧠 Smart logic for handling **out-of-stock or unavailable items**
-- ⏰ Designed for **daily scheduled execution**
+The test simulates a real user going through the process of:
+- Navigating the site
+- Selecting a T-shirt and a short
+- Choosing color and size
+- Adding them to the cart
+- Validating the cart content 
 
----
+The main goal of this test is to make sure that the product selection and cart features are working as expected.
 
-## 🧰 Tech Stack
+## 💡 Daily Test Logic
 
-| Tool/Framework  | Description                     |
-|-----------------|---------------------------------|
-| Selenium WebDriver | Browser automation            |
-| TestNG          | Test orchestration and assertions |
-| Java            | Core programming language       |
-| ChromeDriver    | WebDriver for Google Chrome     |
-| Maven (optional) | Dependency management           |
+If this script is scheduled to run daily, the test includes **checks for product availability** to avoid failures.  
+The logic is:
 
----
+1. Check if the **T-shirt product is available** on the page.
+   - If not, print: `"T-shirt not available"` and skip further steps.
+2. Check if the **selected color is available**.
+   - If not, print: `"Color not available"` and skip further steps.
+3. Check if the **selected size is available**.
+   - If not, print: `"Size not available"` and skip further steps.
+4. If all three are available:
+   - Proceed to click, select color and size, add to cart.
+   - Validate product in cart (name, price, color, size).
 
-## 🧑‍💻 How to Run
+This logic helps avoid test failure due to stock issues and makes it reliable for daily use.
 
-### 📦 Prerequisites
+## 🧪 Technologies Used
 
-- Java JDK 8 or above
-- Chrome Browser installed
-- ChromeDriver (same version as your browser)
-- TestNG installed (if using IDE like IntelliJ or Eclipse)
+- **Java**
+- **Selenium WebDriver**
+- **TestNG**
+- **ChromeDriver**
 
-### ▶️ Execution Steps
+## 📂 How to Run the Test
 
-1. Clone the repo:
-    ```bash
-    git clone https://github.com/sahantheekshana/CarnageTest.git
-    cd CarnageTest
-    ```
+1. Install JDK 8 or above
+2. Add ChromeDriver to your system path (matching your browser version)
+3. Open the project in IntelliJ or Eclipse
+4. Run the `CarnageTest.java` file as a TestNG test
 
-2. Add `chromedriver` to your system path or place it in the project root.
+## 📌 Key Features
+- T-shirt and shorts selection test
+- Handles out-of-stock or unavailable product cases
 
-3. Open the project in your IDE.
+## 🙋‍♂️ Author
+Email: sahantheekshana65@gmail.com
+GitHub: https://github.com/sahantheekshana
 
-4. Run the test:
-    - Right-click on `CarnageTest.java` > Run
-    - Or use terminal with TestNG XML if integrated
 
----
-
-## 🔄 Test Workflow
-
-### ✅ Product Validation Flow
-
-1. **Navigate** to "T-Shirts" via hover menu
-2. **Check availability** of:
-   - Product
-   - Color
-   - Size
-3. **Add to Cart**
-4. **Navigate** to "Shorts"
-5. **Repeat** steps for shorts
-6. **Validate cart details** for T-shirt:
-   - Name
-   - Color
-   - Size
-   - Price
-
----
-
-## 🧠 Out-of-Stock Handling Logic
-
-Before interacting with any element:
-- Checks whether the **T-shirt**, **color**, and **size** are present
-- If **not available**, prints a message and **skips that test**
-- Ensures **automation does not fail** due to product unavailability
-- Improves **reliability** for scheduled test runs
-
----
-
-## 🖼️ Sample Console Output
-
-```bash
-T-shirt is available
-Color is available
-Size is available
-Adding to cart...
-Validating cart...
-Assertion passed: All values matched!
