@@ -41,7 +41,7 @@ This project is a **TestNG + Selenium** based automation framework designed to *
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/yourusername/CarnageTest.git
+    git clone https://github.com/sahantheekshana/CarnageTest.git
     cd CarnageTest
     ```
 
